@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:background="@color/background">
+
+    <!-- Toolbar Section -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/app_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <ImageView
+            android:id="@+id/btnShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_share"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="Share"
+            android:onClick="shareApp"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Welcome Message Section -->
+    <TextView
+        android:id="@+id/tvWelcomeMessage"
+        android:layout_width="350dp"
+        android:textSize="15dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Assalamualaikum! Welcome to our Zakat application, where your contributions make a meaningful impact."
+        android:textColor="@android:color/black" />
+
+    <!-- Image Section -->
+    <ImageView
+        android:id="@+id/imageSection"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/tvWelcomeMessage"
+        android:layout_marginTop="40dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/zakat" />
+
+    <TextView
+        android:id="@+id/ourServices"
+        android:layout_width="350dp"
+        android:textSize="15dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageSection"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Our Services"
+        android:textColor="@color/secondary"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ourServices"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <!-- About Button -->
+        <Button
+            android:id="@+id/btnAbout"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@color/primary"
+            android:text="About"
+            android:textColor="#FFFFFF" />
+
+        <!-- Calculator Button -->
+        <Button
+            android:id="@+id/btnCalculator"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@color/primary"
+            android:text="Calculator"
+            android:textColor="#FFFFFF" />
+
+        <!-- Contact Us Button -->
+        <Button
+            android:id="@+id/btnContactUs"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@color/primary"
+            android:text="Contact Us"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+
+    <!-- Copyright Notice -->
+    <TextView
+        android:id="@+id/copyright_text_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="© 2023 Zakat Calculator. All rights reserved."
+        android:textColor="@color/secondary"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+</RelativeLayout>

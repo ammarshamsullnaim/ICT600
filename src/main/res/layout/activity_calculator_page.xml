@@ -1,0 +1,167 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        android:elevation="4dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
+
+        <!-- LinearLayout for positioning -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!-- Button on the left -->
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-120dp"
+                android:backgroundTint="@color/secondary"
+                android:onClick="goBackToMainActivity"
+                android:text="Back"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- TextView in the center -->
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Zakat Calculator"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/back_button"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </LinearLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <EditText
+        android:id="@+id/editTextWeight"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Enter Weight in grams"
+        android:textColorHint="@color/primary"
+        android:inputType="numberDecimal"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="100dp"/>
+
+    <TextView
+        android:id="@+id/textViewGoldTypeTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Type of Gold"
+        android:textColor="@color/primary"
+        android:layout_below="@id/editTextWeight"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- RadioGroup for Gold Type -->
+    <RadioGroup
+        android:id="@+id/radioGroupType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/textViewGoldTypeTitle"
+        android:layout_marginBottom="8dp">
+
+        <!-- RadioButton for Keep -->
+        <RadioButton
+            android:id="@+id/radioButtonKeep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Keep"
+            android:textColor="@android:color/white"
+            android:background="@drawable/radio_button_background"
+            android:checked="true"
+            android:layout_marginEnd="25dp"/>
+
+        <!-- RadioButton for Wear -->
+        <RadioButton
+            android:id="@+id/radioButtonWear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wear"
+            android:textColor="@android:color/white"
+            android:background="@drawable/radio_button_background"
+            android:checked="true"/>
+    </RadioGroup>
+
+    <!-- EditText for Current Gold Value -->
+    <EditText
+        android:id="@+id/editTextValue"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Enter Current Gold Value per gram (RM)"
+        android:textColorHint="@color/primary"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/radioGroupType"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Button for Calculate -->
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:layout_below="@id/editTextValue"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@android:color/white" />
+
+    <!-- TextView for Total Value -->
+    <TextView
+        android:id="@+id/textViewTotalValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_below="@id/buttonCalculate"
+        android:layout_marginTop="16dp"/>
+
+    <!-- TextView for Total Zakat Payable -->
+    <TextView
+        android:id="@+id/textViewTotalZakatPayable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_below="@id/textViewTotalValue"
+        android:layout_marginTop="8dp"/>
+
+    <!-- TextView for Total Zakat -->
+    <TextView
+        android:id="@+id/textViewTotalZakat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_below="@id/textViewTotalZakatPayable"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Copyright Notice -->
+    <TextView
+        android:id="@+id/copyright_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="© 2023 Zakat Calculator. All rights reserved."
+        android:textColor="@color/secondary"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+</RelativeLayout>
